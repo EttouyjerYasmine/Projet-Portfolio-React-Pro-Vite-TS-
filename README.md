@@ -64,3 +64,10 @@ Ce site présente mon parcours académique, mes compétences techniques, mes pro
 
 ### 📁 Page de mes certifications
 -<img width="570" height="504" alt="6" src="https://github.com/user-attachments/assets/2a35c882-dc94-477c-b4bf-81b848de38e8" />
+
+### 📁 Bonus
+
+-<img width="605" height="510" alt="9" src="https://github.com/user-attachments/assets/c5e6cceb-ff44-4e3d-ad8f-d077d068c386" />
+-<img width="922" height="501" alt="7" src="https://github.com/user-attachments/assets/b4d4a420-dc44-41d3-84cd-a389e4e9f01f" />
+-<img width="920" height="508" alt="10" src="https://github.com/user-attachments/assets/45508e50-7b9b-4eff-b4a0-06e70f754755" />
+
