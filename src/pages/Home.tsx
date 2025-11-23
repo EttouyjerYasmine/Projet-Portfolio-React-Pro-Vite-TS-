@@ -1,122 +1,189 @@
-import { useState } from "react";
 import { profile } from "@/data/profile";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import ContactInfo from "@/components/ContactInfo";
+import { Code, Database, Network, Briefcase, Award, Mail, Box } from "lucide-react";
 
 export default function Home() {
-  const [showProjects, setShowProjects] = useState(false);
-
-  const projects = [
-    {
-      title: "Plateforme de gestion des dons",
-      description: "Application web pour gérer les dons et les bénéficiaires avec suivi et reporting."
-    },
-    {
-      title: "Plateforme de gestion de bibliothèque",
-      description: "Système complet pour gérer livres, emprunts, retours et utilisateurs en HTML, CSS et JavaScript."
-    },
-    {
-      title: "Supervision réseau",
-      description: "Supervision de plus de 5 services (HTTP, SNMP, etc.) avec Nagios, alertes et monitoring."
-    },
-    {
-      title: "Projet Réalité Augmentée",
-      description: "Application AR interactive avec Vuforia pour visualiser des modèles 3D."
-    },
-    {
-      title: "Portfolio personnel",
-      description: "Site web responsive en HTML, CSS et JavaScript pour présenter mes compétences et projets."
-    },
-    {
-      title: "Mini-jeu interactif",
-      description: "Jeu web simple développé en JavaScript et CSS pour démontrer la logique et l’interactivité."
-    },
-    {
-      title: "Formulaire dynamique",
-      description: "Page web avec validation et calcul automatique utilisant HTML, CSS et JavaScript."
-    }
-  ];
-
   return (
-    <div className="relative min-h-screen bg-gray-50 text-gray-900">
-      {/* SEO */}
+    <div className="relative min-h-screen bg-gradient-hero">
       <Helmet>
-        <title>{profile.name} — Portfolio</title>
+        <title>{profile.name} — Portfolio Professionnel | Ingénieure en Informatique</title>
         <meta
           name="description"
-          content="Portfolio : Développement, Réseaux, DevOps et Bureautique"
+          content="Portfolio professionnel de Yasmine Ettouyjer - Ingénieure en Informatique spécialisée en Développement, Réseau, AR/VR. Découvrez mes projets, certifications et compétences."
         />
       </Helmet>
 
-      <div className="max-w-4xl mx-auto p-6 space-y-12">
-        {/* Section Présentation */}
-        <section className="text-center space-y-4">
-          <h1 className="text-5xl font-bold">{profile.name}</h1>
-          <p className="text-xl text-muted-foreground">{profile.role}</p>
-          <p className="text-muted-foreground max-w-2xl mx-auto">{profile.about}</p>
-        </section>
+      <div className="max-w-7xl mx-auto px-6 py-16 md:py-24 space-y-28">
+        {/* Hero Section Professionnel */}
+        <section className="text-center space-y-8 animate-slideUp">
+          <div className="flex justify-center mb-8">
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-r from-primary via-accent to-primary rounded-full blur-3xl opacity-30 animate-pulse"></div>
+              <div className="relative w-56 h-56 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-primary/30 shadow-professional-lg ring-4 ring-primary/10 bg-gradient-to-br from-primary/10 to-accent/10">
+                <img
+                  src="/mee.jpeg"
+                  alt="Photo de Yasmine Ettouyjer"
+                  className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700"
+                />
+              </div>
+              <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-background shadow-lg animate-float"></div>
+            </div>
+          </div>
+          
+          <div className="space-y-6">
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold gradient-text leading-tight">
+              {profile.name}
+            </h1>
+            <p className="text-3xl md:text-4xl font-semibold text-muted-foreground">
+              Ingénieure en Informatique
+            </p>
+            <p className="text-xl md:text-2xl text-foreground/90 max-w-4xl mx-auto leading-relaxed font-light">
+              {profile.about}
+            </p>
+          </div>
 
-        {/* Section Photo */}
-        <section className="flex justify-center">
-          <div className="w-64 h-64 rounded-2xl overflow-hidden border shadow-lg">
-            <img
-              src="/mee.jpg"
-              alt="Photo de Yasmine"
-              className="object-cover w-full h-full transition-transform duration-500 hover:scale-110"
-            />
+          <div className="flex flex-wrap justify-center gap-4 pt-6">
+            <Link
+              to="/projects"
+              className="btn-primary"
+            >
+              Mes Projets
+            </Link>
+            <Link
+              to="/certifications"
+              className="btn-secondary"
+            >
+              Mes Certifications
+            </Link>
+            <Link
+              to="/contact"
+              className="px-8 py-3 rounded-xl bg-secondary text-secondary-foreground font-semibold hover:bg-secondary/80 transition-all shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 flex items-center gap-2"
+            >
+              <Mail className="w-5 h-5" />
+              Me Contacter
+            </Link>
           </div>
         </section>
 
-        {/* Section Projets */}
-<section className="text-center space-y-4">
-  <h2 className="text-3xl font-semibold">Mes projets</h2>
-  <p className="text-muted-foreground max-w-xl mx-auto">
-    Découvrez mes projets professionnels et académiques, y compris des plateformes web, des projets réseau et des applications de réalité augmentée.
-  </p>
-  <Link
-    to="/projects"
-    className="mt-4 inline-block px-6 py-2 border rounded-lg hover:bg-gray-100 hover:text-gray-900 transition"
-  >
-    Voir mes projets
-  </Link>
-</section>
+        {/* Compétences Professionnelles */}
+        <section className="animate-slideUp">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">
+              Compétences Techniques
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Expertise dans les technologies modernes et les meilleures pratiques du développement
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="bg-card border-2 border-border rounded-2xl p-8 card-hover shadow-professional bg-gradient-to-br from-card to-card/50">
+              <div className="flex items-center gap-4 mb-5">
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center shadow-professional">
+                  <Code className="w-7 h-7 text-primary" />
+                </div>
+                <h3 className="text-2xl font-bold">Développement</h3>
+              </div>
+              <p className="text-muted-foreground text-base leading-relaxed">
+                Java, JPA/Hibernate, Jakarta JEE, React, Android, C#, HTML/CSS/JS
+              </p>
+            </div>
 
+            <div className="bg-card border-2 border-border rounded-2xl p-8 card-hover shadow-professional bg-gradient-to-br from-card to-card/50">
+              <div className="flex items-center gap-4 mb-5">
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center shadow-professional">
+                  <Database className="w-7 h-7 text-primary" />
+                </div>
+                <h3 className="text-2xl font-bold">Base de données</h3>
+              </div>
+              <p className="text-muted-foreground text-base leading-relaxed">
+                MySQL, PostgreSQL
+              </p>
+            </div>
 
-        {/* Section Certifications */}
-        <section className="text-center">
-          <h3 className="text-xl font-semibold mb-2">Certifications</h3>
-          <div className="flex flex-wrap justify-center gap-2 text-sm">
-            <span className="rounded-full border px-3 py-1">Licence Informatique — Cadi Ayyad</span>
-            <span className="rounded-full border px-3 py-1">Master Ingénierie Informatique — Cadi Ayyad</span>
+            <div className="bg-card border-2 border-border rounded-2xl p-8 card-hover shadow-professional bg-gradient-to-br from-card to-card/50">
+              <div className="flex items-center gap-4 mb-5">
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center shadow-professional">
+                  <Network className="w-7 h-7 text-primary" />
+                </div>
+                <h3 className="text-2xl font-bold">Réseau</h3>
+              </div>
+              <p className="text-muted-foreground text-base leading-relaxed">
+                Nagios, supervision services
+              </p>
+            </div>
+
+            <div className="bg-card border-2 border-border rounded-2xl p-8 card-hover shadow-professional bg-gradient-to-br from-card to-card/50">
+              <div className="flex items-center gap-4 mb-5">
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center shadow-professional">
+                  <Briefcase className="w-7 h-7 text-primary" />
+                </div>
+                <h3 className="text-2xl font-bold">Gestion de projet</h3>
+              </div>
+              <p className="text-muted-foreground text-base leading-relaxed">
+                Git, Docker, Agile, IDOO
+              </p>
+            </div>
+
+            <div className="bg-card border-2 border-border rounded-2xl p-8 card-hover shadow-professional bg-gradient-to-br from-card to-card/50">
+              <div className="flex items-center gap-4 mb-5">
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center shadow-professional">
+                  <Award className="w-7 h-7 text-primary" />
+                </div>
+                <h3 className="text-2xl font-bold">Bureautique</h3>
+              </div>
+              <p className="text-muted-foreground text-base leading-relaxed">
+                Word, Excel
+              </p>
+            </div>
+
+            <div className="bg-card border-2 border-border rounded-2xl p-8 card-hover shadow-professional bg-gradient-to-br from-card to-card/50">
+              <div className="flex items-center gap-4 mb-5">
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center shadow-professional">
+                  <Box className="w-7 h-7 text-primary" />
+                </div>
+                <h3 className="text-2xl font-bold">AR/VR</h3>
+              </div>
+              <p className="text-muted-foreground text-base leading-relaxed">
+                Vuforia SDK, Unity, Android Studio, Détection d'images/objets 3D, Superposition virtuelle
+              </p>
+            </div>
           </div>
         </section>
 
-        {/* Section Compétences */}
-        <section>
-          <h3 className="text-xl font-semibold mb-2 text-center">Compétences Développement</h3>
-          <ul className="list-disc list-inside max-w-2xl mx-auto space-y-1 text-sm">
-            <li>
-              <strong>Développement :</strong> Java, Hibernate & JPA, Jakarta JEE, C#, React, Android, HTML, CSS, JavaScript
-            </li>
-            <li>
-              <strong>Base de données :</strong> MySQL, PostgreSQL
-            </li>
-            <li>
-              <strong>Réseau & Supervision :</strong> Nagios, Administration de services réseau
-            </li>
-            <li>
-              <strong>DevOps / Gestion de projet :</strong> Git, Docker, Agile, IDOO
-            </li>
-            <li>
-              <strong>Bureautique :</strong> Word, Excel, outils de productivité
-            </li>
-          </ul>
+        {/* Diplômes Professionnels */}
+        <section className="animate-slideUp">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">
+              Formations Académiques
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Parcours académique et formations supérieures
+            </p>
+          </div>
+          <div className="flex flex-wrap justify-center gap-6">
+            <div className="px-8 py-6 rounded-2xl border-2 border-primary/30 bg-card shadow-professional hover:shadow-professional-lg transition-all hover:scale-105 card-hover bg-gradient-to-br from-card to-card/50 min-w-[280px]">
+              <p className="font-bold text-xl mb-2">Licence Informatique</p>
+              <p className="text-base text-muted-foreground">Université Cadi Ayyad</p>
+            </div>
+            <div className="px-8 py-6 rounded-2xl border-2 border-primary/30 bg-card shadow-professional hover:shadow-professional-lg transition-all hover:scale-105 card-hover bg-gradient-to-br from-card to-card/50 min-w-[280px]">
+              <p className="font-bold text-xl mb-2">Master Ingénierie Informatique</p>
+              <p className="text-base text-muted-foreground">Université Cadi Ayyad</p>
+            </div>
+          </div>
         </section>
 
-        {/* Section Contact professionnel */}
-        <section className="border-t pt-6 space-y-3">
-          <h3 className="text-xl font-semibold text-center">Contact professionnel</h3>
+        {/* Contact Professionnel */}
+        <section className="border-t-2 border-border/50 pt-16 animate-slideUp">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">
+              Contact Professionnel
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              N'hésitez pas à me contacter pour toute opportunité professionnelle
+            </p>
+          </div>
           <div className="flex justify-center">
             <ContactInfo />
           </div>

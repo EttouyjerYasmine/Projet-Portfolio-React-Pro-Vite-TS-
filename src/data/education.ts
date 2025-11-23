@@ -9,4 +9,7 @@ export const education = [
     institution: "École Normale Supérieure de Marrakech",
     year: "2025 (en cours)",
   },
+  { school: "Université Cadi Ayyad Marrakech" },
+  { school: "Faculté des Sciences Semlalia" }
 ];
+

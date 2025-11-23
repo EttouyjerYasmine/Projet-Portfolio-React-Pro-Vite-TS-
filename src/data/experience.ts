@@ -48,4 +48,11 @@ export const experience = [
     description:
       "Gestion des réservations, assistance client et coordination avec le projet Europcar via l’outil Grinway.",
   },
+   {
+    title: "Comptable et Caissiére",
+    company: "Marrak-Marrakech",
+    year: "2025",
+    description:
+      " J’assurais la gestion de la caisse, l’encaissement des paiements et le contrôle quotidien des transactions. Je participais également au suivi comptable du restaurant, notamment la saisie des opérations, le contrôle des factures et la préparation des rapports financiers journaliers.",
+  },
 ];

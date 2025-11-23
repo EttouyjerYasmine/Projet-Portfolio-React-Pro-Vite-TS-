@@ -9,7 +9,7 @@ import Experience from "@/pages/Experience";
 import Education from "@/pages/Education";
 import CertificationsPage from "@/pages/Certification";
 import Projects from "@/pages/Projects";
-
+import Contact from "@/pages/Contact"; // <-- Assure-toi que la page existe
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
@@ -23,6 +23,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
             <Route path="education" element={<Education />} />
             <Route path="certifications" element={<CertificationsPage />} />
             <Route path="projects" element={<Projects />} />
+            <Route path="contact" element={<Contact />} /> {/* <-- Correct */}
           </Route>
         </Routes>
       </BrowserRouter>

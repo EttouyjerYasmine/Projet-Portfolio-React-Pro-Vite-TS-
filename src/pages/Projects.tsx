@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { projects } from "@/data/projects";
 import { Link } from "react-router-dom";
+import { Code, ExternalLink, Github } from "lucide-react";
 
 export default function Projects() {
   return (
@@ -13,37 +14,40 @@ export default function Projects() {
         />
       </Helmet>
 
-      {/* Titre et description */}
-      <div className="text-center space-y-2">
-        <h1 className="text-4xl font-bold">Mes Projets</h1>
-        <p className="text-muted-foreground">
+      {/* Titre et description Professionnels */}
+      <div className="text-center space-y-4 mb-16 animate-slideUp">
+        <div className="flex justify-center mb-6">
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-full blur-2xl opacity-30"></div>
+            <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center border-2 border-primary/30 shadow-professional">
+              <Code className="w-8 h-8 text-primary" />
+            </div>
+          </div>
+        </div>
+        <h1 className="text-5xl md:text-6xl font-bold gradient-text">Mes Projets</h1>
+        <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
           Découvrez mes projets Web, Réseau et Réalité Augmentée, ainsi que mes réalisations professionnelles.
         </p>
-        <Link
-          to="/"
-          className="inline-block mt-2 px-4 py-2 border rounded-lg hover:bg-gray-100 hover:text-gray-900 transition"
-        >
-          Retour à l’accueil
-        </Link>
       </div>
 
-      {/* Grille des projets */}
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {projects.map((p) => (
+      {/* Grille des projets Professionnelle */}
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 animate-scaleIn">
+        {projects.map((p, index) => (
           <article
             key={p.title}
-            className="border rounded-2xl p-4 hover:shadow-lg transition"
+            className="group bg-card border-2 border-border rounded-2xl p-6 card-hover shadow-professional bg-gradient-to-br from-card to-card/50"
+            style={{ animationDelay: `${index * 0.1}s` }}
           >
-            <h3 className="font-semibold text-lg">{p.title}</h3>
-            <p className="text-sm text-muted-foreground mt-2">{p.summary}</p>
+            <h3 className="font-bold text-xl mb-3 group-hover:text-primary transition-colors">{p.title}</h3>
+            <p className="text-base text-muted-foreground mb-4 leading-relaxed">{p.summary}</p>
 
-            {/* Tags */}
+            {/* Tags Professionnels */}
             {p.tags && p.tags.length > 0 && (
-              <div className="mt-3 flex flex-wrap gap-2 text-xs">
+              <div className="mt-4 mb-5 flex flex-wrap gap-2">
                 {p.tags.map((t) => (
                   <span
                     key={t}
-                    className="border rounded px-2 py-0.5 bg-gray-50"
+                    className="text-xs px-3 py-1.5 rounded-full border border-border bg-background text-foreground font-medium"
                   >
                     {t}
                   </span>
@@ -51,15 +55,16 @@ export default function Projects() {
               </div>
             )}
 
-            {/* Liens */}
-            <div className="mt-4 flex gap-3 text-sm">
+            {/* Liens Professionnels */}
+            <div className="mt-5 pt-5 border-t border-border/50 flex gap-3">
               {p.link && (
                 <a
                   href={p.link}
                   target="_blank"
                   rel="noreferrer"
-                  className="underline"
+                  className="flex items-center gap-2 px-4 py-2 text-sm font-semibold rounded-xl bg-primary text-primary-foreground hover:bg-primary/90 transition-all shadow-sm hover:shadow-md"
                 >
+                  <ExternalLink className="w-4 h-4" />
                   Démo
                 </a>
               )}
@@ -68,8 +73,9 @@ export default function Projects() {
                   href={p.repo}
                   target="_blank"
                   rel="noreferrer"
-                  className="underline"
+                  className="flex items-center gap-2 px-4 py-2 text-sm font-semibold rounded-xl border-2 border-border hover:bg-accent hover:text-accent-foreground transition-all"
                 >
+                  <Github className="w-4 h-4" />
                   Code
                 </a>
               )}

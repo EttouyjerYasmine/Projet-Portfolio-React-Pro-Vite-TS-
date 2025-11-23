@@ -24,10 +24,10 @@ export const projects = [
     repo: "",
   },
   {
-    title: "Projet Réalité Augmentée avec Vuforia",
+    title: "Application Réalité Augmentée avec Vuforia",
     summary:
-      "Application AR interactive pour visualiser des modèles 3D et interagir avec eux via un smartphone.",
-    tags: ["AR", "Vuforia", "Unity", "3D"],
+      "Développement d'applications AR interactives pour Android avec intégration de Vuforia SDK. Détection et suivi d'images/objets 3D, superposition d'éléments virtuels sur le monde réel via caméra. Applications immersives et interactives.",
+    tags: ["AR", "Vuforia SDK", "Android Studio", "Unity", "3D", "Réalité Augmentée"],
     link: "",
     repo: "",
   },

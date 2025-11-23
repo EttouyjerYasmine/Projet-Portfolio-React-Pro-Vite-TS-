@@ -1,0 +1,6 @@
+Systeme olp
+Inconvenients 
+ne sont pas concus pour l'analyse 
+La modelisation E/R entité relation leurs caracteristiques
+Le systeme OLAP
+la modélistaion multidimentionnelle c'est la seule technique fiable a pour but de fournin des données plus flexibles
